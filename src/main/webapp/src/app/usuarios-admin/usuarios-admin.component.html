@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+
+<div class="container-responsivep"><div class="table-responsive">
+<table class="table table-striped">
+  <caption> Lista de usuarios de la organización </caption>
+    <thead>
+      <tr>
+        <th *ngFor="let head of columnas" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of data">
+        <td>{{el.dni}}</td>
+        <td>{{el.nombre}}</td>
+        <td>{{el.apellidos}}</td>
+        <td>{{el.telefono}}</td>
+        <td>{{el.correo}}</td>
+        <td>{{el.tipo}}</td>
+        <td>
+            <button raised-button (click)="modificar(el)" mat-flat-button color="green"
+					class="btn btn-primary">Modificar</button>
+        </td>
+        <td>
+            <button raised-button (click)="eliminar(el.dni)" mat-flat-button color="green"
+					class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

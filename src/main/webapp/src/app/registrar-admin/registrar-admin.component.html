@@ -1,0 +1,79 @@
+
+
+<app-menu></app-menu>
+<body>
+  <app-alerta></app-alerta>
+    <div class="container">
+      <h2 class="register-title">Registrar otro usuario</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-container">
+  
+        <div class="form-group">
+  
+          <label class="col-sm-2 col-form-label">DNI: </label>
+          <input type="text" formControlName="dni" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.dni.errors }">
+          <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
+            <div *ngIf="f.dni.errors.required">Por favor, escriba su DNI</div>
+          </div>
+  
+          <label>Contraseña: </label>
+          <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Por favor, escriba una contraseña</div>
+          </div>
+          <label>Repite Contraseña: </label>
+        <input type="password" formControlName="password2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password2.errors }" />
+        <div *ngIf="submitted && f.password2.errors" class="invalid-feedback">
+            <div *ngIf="f.password2.errors.required">Las contraseñas no coinciden</div>
+        </div>
+          <label>Nombre: </label>
+          <input type="text" formControlName="nombre" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+          <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+            <div *ngIf="f.nombre.errors.required">Por favor, escriba su nombre</div>
+          </div>
+  
+          <label>Apellidos: </label>
+          <input type="text" formControlName="apellidos" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.apellidos.errors }">
+          <div *ngIf="submitted && f.apellidos.errors" class="invalid-feedback">
+            <div *ngIf="f.apellidos.errors.required">Por favor, escriba sus apellidos</div>
+          </div>
+          <label>E-mail: </label>
+          <input type="text" formControlName="correo" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.correo.errors }">
+          <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+            <div *ngIf="f.correo.errors.required">Por favor, escriba un correo electrónico</div>
+          </div>
+          <label>Nº Teléfono: </label>
+          <input type="tel" formControlName="telefono" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }">
+          <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+            <div *ngIf="f.telefono.errors.required">Por favor, escriba su número de teléfono</div>
+          </div>
+          
+          <label for = "tipo" > Tipo usuario: </label> 
+            <div>
+              <input id = "admin" type = "radio" value = "admin" name = "tipo" formControlName = "tipo" >     
+              <label for = "admin" > Admin </label> 
+            </div>
+              <div>
+              <input id = "asistente" type = "radio" value = "asistente" name = "tipo" formControlName = "tipo" >     
+              <label for = "asistente" > Asistente </label> 
+           </div>
+          
+
+  
+          <br>
+          <div class="form-group">
+            <p><input type="submit" class="submit" value="Registrar"></p>
+           
+          </div>
+          <div>
+            <p><input type="submit" class="submit" routerLink="/reuniones" value="Cancelar"></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>

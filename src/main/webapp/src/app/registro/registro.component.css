@@ -1,0 +1,113 @@
+.container {
+    width: 500px;
+    margin: 16px auto;
+    font-size: 16px;
+    padding: 10px;
+}
+
+
+/* Reset top and bottom margins from certain elements */
+
+.register-title,
+.container p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* The container form is achieved by a CSS hack */
+
+.register-container {
+    width: 400;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    
+}
+
+.register-title {
+    background: #23bfca;
+    padding: 16px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.register-container {
+    background: #ebebeb;
+    padding: 10 px;
+    display: grid;
+
+}
+
+
+/* Every row inside .register-container is defined with p tags */
+
+.container p {
+    padding: 6px;
+}
+
+.container input {
+    box-sizing: border-box;
+    padding: 6px;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.container input[type="text"],
+.container input[type="password"]{
+    width: 100%;
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+    margin-top: 5px;
+}
+.container select{
+      box-sizing: border-box;
+    padding: 6px;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5%;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+/* Text fields' focus effect */
+
+.container input[type="text"]:focus,
+.container input[type="password"]:focus{
+    border-color: #888;
+}
+
+.container input[type="submit"] {
+    background: #23bfca;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    left: 50%;
+    border-radius: 10px;
+}
+
+.container input[type="submit"]:hover {
+    background: #1e7bb1;
+}
+
+
+/* Buttons' focus effect */
+
+.container input[type="submit"]:focus {
+    border-color: #1e7bb1;
+}.ng-valid {
+    border: thin solid #090;
+}
+

@@ -1,0 +1,9 @@
+.content {
+    width: auto;
+    padding: 16px;
+    margin-top: auto;
+
+        overflow: hidden scroll;
+        margin-right: -5px;
+      
+}

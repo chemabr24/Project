@@ -1,0 +1,58 @@
+<app-alerta></app-alerta>
+<div class="container">
+  <div class="reunion-container">
+    <h1 mat-dialog-title><strong>Reunion</strong></h1>
+    <div class="form-container">
+      <mat-dialog-content>
+      <form action="">
+        <div class="form-group">
+          <label>Titulo: </label>
+          <input type="text" class="form-control" disabled="false" matInput [(ngModel)]="local_data.titulo" name="titulo" id="titulo"
+           >
+        </div>
+        <div class="form-group">
+          <label>Descripcion: </label>
+          <textarea type="text" class="form-control" matInput [(ngModel)]="local_data.descripcion" name="descripcion" id="descripcion"
+            disabled="false"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Organizador: </label>
+          <input type="text" class="form-control" matInput [(ngModel)]="local_data.organizador" name="organizador" id="organizador"
+            disabled="false">
+        </div>
+        <div class="form-group">
+          <label>Fecha: </label>
+          <input type="date" class="form-control" matInput [(ngModel)]="local_data.fecha" name="fecha" disabled="false" id="fecha">
+        </div>
+        <span style="white-space:nowrap">
+          <div class="form-group">
+            <label>Hora inicio: </label>
+            <input type="time" class="form-control" matInput [(ngModel)]="local_data.horaIni" name="horaIni" id="horaIni"
+              disabled="false">
+
+            <label>Hora fin: </label>
+            <input type="time" class="form-control" matInput [(ngModel)]="local_data.horaFin" name="horaFin" id="horaFin"
+              disabled="false">
+          </div>
+        </span>
+        <div class="form-group">
+          <label>Lista asistentes: </label>
+          <input type="text" class="form-control" matInput [(ngModel)]="local_data.listaAsistentes" id="listaAsistentes"
+            name="listaAsistentes" disabled="false">
+        </div>
+        <div>
+
+          <button raised-button (click)="modificar()" mat-flat-button color="green"
+            class="btn btn-primary">{{btn2}}</button>
+
+          <button raised-button (click)="eliminar()" mat-flat-button color="red"
+            class="btn btn-danger">{{btn1}}</button>
+        </div>
+
+      </form>
+    </mat-dialog-content>
+    </div>
+
+  </div>
+
+</div>

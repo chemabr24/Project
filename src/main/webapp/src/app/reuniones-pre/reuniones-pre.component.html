@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{reunion.titulo}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Fecha: {{reunion.fecha}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Inicio: {{reunion.horaIni}}</h6>
+      <p class="card-text">{{reunion.descripcion}}</p>
+      <button raised-button (click)="verReunion()" mat-flat-button color="green"
+					class="btn btn-primary">Ver reunion</button>
+    </div>
+  </div>

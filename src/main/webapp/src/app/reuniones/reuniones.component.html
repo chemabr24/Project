@@ -1,0 +1,8 @@
+<app-menu></app-menu>
+<div class="content card-box">
+    <div class="row">
+        <div *ngFor="let reunion of reuniones">
+            <app-reuniones-pre [reunion]="reunion"></app-reuniones-pre>
+        </div>
+    </div>
+</div>

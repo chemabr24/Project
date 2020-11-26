@@ -1,0 +1,20 @@
+language: java
+addons:
+  firefox: "56.0"
+
+before_install:
+  - chmod +x mvnw
+  - sudo apt-get install xvfb
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux64.tar.gz
+  - sudo tar -xzf geckodriver-v0.19.0-linux64.tar.gz -C /usr/bin
+  - sudo chmod a+x /usr/bin/geckodriver
+  - export DISPLAY=:99.0
+  - sleep 5 
+  
+deploy:
+  provider: heroku
+  api_key:
+    secure: "SLDMnvknqOxh3lXS70X3TKr6BT6aEVaGcXGLHIHkHLBZ/QSOxPYue3hOcnk6+QvqIbWrVv7jTlbxAqpDOdf1lWg180/ZQMEjaX1Zk19jLoD/ta9WXgilIaoUzJL0gngWQyEBf5mvgez6TpAqjOdeLnnAuHzxvlRDe7wQ7gt+nf/kTRxG7BFbjUZBacLbxO3rBtoZ31nafwIOJA4EvrG7ShobUzUhpH8NriWxKt/kkUde2rPh5ouObKdTYSZ7aIm446cD5HIrJOmzVp3n7Sxk6MD5mlf7eWLtLHUs8pOOzgcM/y4en49mcGiiy26Tf64uCq/wFy54i9+2ALw7D7q2FWsWkdoRVs9nPebDu0gPIPaXD6r/jxJpgcxBQEUxqtm/a1Y3ZQjwwJLJGyu4ex2xTYo00iBQV7Is0m0NuvyBFVmAr8A5C/d23cdziv2fWND+Qc/PTziTsYpcBSzIpBEfzhIBfAbnhxGHsb+nR2P+j6LCUd0xLW8UtGeVmjkrHWD9jz4eJ+7KmqOnmrUdo8MuxSCMg0k33vQuaBPuQXCbE+qlm/MX2UifxerRLGumLSne5iLMSXqGGm+aOx+zxH055tNCUTpRKDZdGNkzvqbvQd6TrAzKG/zxHas5SoYum7udfmDaixMWmhCyRWTWLdOJ3ZOjZxT0iB+YPvTcmPMzhj4="
+  on:
+    tags: true
+    all_branches: true

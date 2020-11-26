@@ -1,0 +1,20 @@
+
+<div class="alert alert-danger" [hidden]="!error">
+	There was a problem logging in. Please try again.
+</div>
+
+<br>
+<div class="login">
+    <h2 class="login-header">Iniciar sesión</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-container">
+        <div class="form-group">
+            <input type="DNI" placeholder="DNI" id="DNI" formControlName="DNI" class="form-control" [(ngModel)]="DNI"/>
+            <input type="password" placeholder="Contraseña" id="password" formControlName="password" class="form-control" [(ngModel)]="password"/>
+
+            <div class="form-group">
+                <p><input type="submit" value="Acceder"></p>
+                <p><input type="submit2" value="Registrarse" routerLink="/register" class="btn btn-link"></p>
+            </div>
+        </div>
+    </form>
+</div>
